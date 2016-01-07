@@ -35,7 +35,7 @@
 <link href="/blog/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="diary," />
+  <meta name="keywords" content="Algorithms," />
 
 
 
@@ -51,40 +51,16 @@
 
 
 
-<meta name="description" content="今天是2016年1月1日，时间过得好快，转眼马上就快过年了。一到年底，我就容易陷入无限的哀
-
-伤中，然后开始回忆这一年都做了些什么，现在记忆越来越来越不中用了，似乎脑容量有限，要存一
-
-些东西，也要删除一些东西。
-
-    2015.1.26入职，找的新的工作，就开始从考研上自习转到了上班写代码。好像刚开始的时候还
-
-没有感觉，然后就三个月转正之后差不多，就几乎开启了疯狂的加班的模式，说是1、2、">
+<meta name="description" content="##319. Bulb Switcher There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇日志">
-<meta property="og:url" content="http://huangchao1.github.io/2016/01/01/blog1/index.html">
+<meta property="og:title" content="LeetCode3">
+<meta property="og:url" content="http://huangchao1.github.io/2016/01/07/leetCode3/index.html">
 <meta property="og:site_name" content="a programmer growing diary">
-<meta property="og:description" content="今天是2016年1月1日，时间过得好快，转眼马上就快过年了。一到年底，我就容易陷入无限的哀
-
-伤中，然后开始回忆这一年都做了些什么，现在记忆越来越来越不中用了，似乎脑容量有限，要存一
-
-些东西，也要删除一些东西。
-
-    2015.1.26入职，找的新的工作，就开始从考研上自习转到了上班写代码。好像刚开始的时候还
-
-没有感觉，然后就三个月转正之后差不多，就几乎开启了疯狂的加班的模式，说是1、2、">
-<meta property="og:updated_time" content="2016-01-01T04:49:48.992Z">
+<meta property="og:description" content="##319. Bulb Switcher There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’">
+<meta property="og:updated_time" content="2016-01-07T11:43:07.987Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一篇日志">
-<meta name="twitter:description" content="今天是2016年1月1日，时间过得好快，转眼马上就快过年了。一到年底，我就容易陷入无限的哀
-
-伤中，然后开始回忆这一年都做了些什么，现在记忆越来越来越不中用了，似乎脑容量有限，要存一
-
-些东西，也要删除一些东西。
-
-    2015.1.26入职，找的新的工作，就开始从考研上自习转到了上班写代码。好像刚开始的时候还
-
-没有感觉，然后就三个月转正之后差不多，就几乎开启了疯狂的加班的模式，说是1、2、">
+<meta name="twitter:title" content="LeetCode3">
+<meta name="twitter:description" content="##319. Bulb Switcher There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’">
 
 
 
@@ -96,7 +72,7 @@
   };
 </script>
 
-  <title> 我的第一篇日志 | a programmer growing diary </title>
+  <title> LeetCode3 | a programmer growing diary </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -236,7 +212,7 @@
             
             
               
-                我的第一篇日志
+                LeetCode3
               
             
           </h1>
@@ -245,8 +221,8 @@
         <div class="post-meta">
           <span class="post-time">
             发表于
-            <time itemprop="dateCreated" datetime="2016-01-01T11:01:40+08:00" content="2016-01-01">
-              2016-01-01
+            <time itemprop="dateCreated" datetime="2016-01-07T19:30:40+08:00" content="2016-01-07">
+              2016-01-07
             </time>
           </span>
 
@@ -255,8 +231,8 @@
               &nbsp; | &nbsp; 分类于
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/blog/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
+                  <a href="/blog/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
                   </a>
                 </span>
 
@@ -271,8 +247,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/blog/2016/01/01/blog1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/01/blog1/" itemprop="commentsCount"></span>
+                <a href="/blog/2016/01/07/leetCode3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/leetCode3/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -291,54 +267,49 @@
       
 
       
-        <span itemprop="articleBody"><pre><code>    今天是2016年1月1日，时间过得好快，转眼马上就快过年了。一到年底，我就容易陷入无限的哀
+        <span itemprop="articleBody"><p>##319. Bulb Switcher<br> There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
+<p>Example:</p>
+<p>Given n = 3. </p>
+<p>At first, the three bulbs are [off, off, off].<br>After first round, the three bulbs are [on, on, on].<br>After second round, the three bulbs are [on, off, on].<br>After third round, the three bulbs are [on, off, off]. </p>
+<p>So you should return 1, because there is only one bulb is on.</p>
+<p>题意:</p>
+<pre><code>有n盏初始处于关闭状态的灯泡。
 
-伤中，然后开始回忆这一年都做了些什么，现在记忆越来越来越不中用了，似乎脑容量有限，要存一
+你首先打开所有的灯泡。
 
-些东西，也要删除一些东西。
+然后，熄灭所有序号为2的倍数的灯泡。
 
-    2015.1.26入职，找的新的工作，就开始从考研上自习转到了上班写代码。好像刚开始的时候还
+第三轮，切换所有序号为3的倍数的灯泡（开着的就关掉，关着的就打开）。
 
-没有感觉，然后就三个月转正之后差不多，就几乎开启了疯狂的加班的模式，说是1、2、4必须加班到
+第n轮，你只切换最后一只灯泡。计算n轮之后还有几盏灯泡亮着。
+</code></pre><p>解题：<br>    前10盏灯泡的开闭过程如下所示：</p>
+<pre><code>0 0 0 0 0 0 0 0 0 0    0
 
-8点半之后，后来也乱了，有时候会天天晚上加班，周末更是甚繁。就在国庆前后，已经萌生了想要离
-
-职的想法。结果因为报了驾校，迟迟驾照考不过，所以一直搁浅到了年底。
-
-    总的来说，经历了总有收获，只是多与少的问题：
-
-驾照科目二考过了，希望年底或者年后不久能够拿到驾照。好的一点不用再抽出时间去练车了。
-
-这一周使用gitHub+Node.js+Hexo搭建了自己的博客，这一点很值得高兴。因为早该写博客了，对
-
-学习新的东西一个总结和归类，这是作为programmer应该掌握的基本技能。写博客的好处就不再多说
-
-了。
-
-    技能收获:
-
-    MarkDown很好用，简单，快捷，方便。
-
-    系统学习了JavaScript，对Js中基于对象的思想有所了解。
-
-    学习了《LuceneInAction》,Lucene是个强大搜索工具库，对于其基本的应用有所熟悉。
-
-    了解Java爬虫框架Nutch等别的爬虫实现。
-
-    了解了shell，python的语法，能够读懂简单代码。
-
-    了解Hadoop框架，一款开源的分布式框架(MapReduce+HDFS),进行分布式存储和分布式计算。
-
-    围绕Hadoop社区一大群框架出来了，感觉多的了解不完(Spark,ZooKeeper...)。
-
-
-    最近学习计划：
-
-    1.阅读Junit源代码，终点掌握其中设计模式的应用。
-
-    2.刷leetCode的题库，提升算法技能。
-
-    3.在gitHub学习新的开源项目。
+1 1 1 1 1 1 1 1 1 1    1
+1 0 1 0 1 0 1 0 1 0    2
+1 0 0 0 1 1 1 0 0 0    3
+1 0 0 1 1 1 1 1 0 0    4
+1 0 0 1 0 1 1 1 0 1    5
+1 0 0 1 0 0 1 1 0 1    6
+1 0 0 1 0 0 0 1 0 1    7
+1 0 0 1 0 0 0 0 0 1    8
+1 0 0 1 0 0 0 0 1 1    9
+1 0 0 1 0 0 0 0 1 0    10
+</code></pre><p>我们知道，每当灯泡会改变状态，也就是 toggle 时，是因为它出现在了某个数的整数倍上。</p>
+<p>对于第1个灯泡：1*1，会改变1次状态，即 off -》on</p>
+<p>对于第2个灯泡：1<em>2，2</em>1，会改变2次状态，即 off -》on -》off</p>
+<p>对于第3个灯泡：1<em>3，3</em>1，会改变2次状态，即 off -》on -》off</p>
+<p>对于第4个灯泡：1<em>4，2</em>2，4*1，会改变3次状态，即 off -》on -》off -》on</p>
+<p>……</p>
+<p>会发现，每当我找到一个数的整数倍，总会找到对称的一个整数倍，例如 1<em>2，就肯定会有一个 2</em>1。唯一的例外出现在平方数上，例如 4 = 2*2，只有一次整数倍。</p>
+<p>每次作为偶数次整数倍，最终的灯泡都会还原为 off；只有作为奇数次整数倍，最终的灯泡都会 on。</p>
+<p>也就是说，最终亮的灯泡数目由小于其的最大平方数确定。代码非常简单：</p>
+<p><strong>题目不难，但是需要自己发现这个规律过程比较难</strong></p>
+<pre><code>public class Solution {
+    public int bulbSwitch(int n) {
+         return (int)Math.sqrt(n); 
+    }
+}    
 </code></pre></span>
       
     </div>
@@ -347,7 +318,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/diary/" rel="tag">#diary</a>
+            <a href="/blog/tags/Algorithms/" rel="tag">#Algorithms</a>
           
         </div>
       
@@ -356,16 +327,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2015/12/31/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/blog/2016/01/07/leetCode2/" rel="next" title="LeetCode2">
+                <i class="fa fa-chevron-left"></i> LeetCode2
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2016/01/07/Juint/" rel="prev" title="Junit">
-                Junit <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2016/01/07/leetCode4/" rel="prev" title="LeetCode4">
+                LeetCode4 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -393,8 +364,8 @@
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/01/blog1/"
-           data-title="我的第一篇日志" data-url="http://huangchao1.github.io/2016/01/01/blog1/">
+      <div class="ds-thread" data-thread-key="2016/01/07/leetCode3/"
+           data-title="LeetCode3" data-url="http://huangchao1.github.io/2016/01/07/leetCode3/">
       </div>
     
   </div>

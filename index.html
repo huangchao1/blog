@@ -229,6 +229,923 @@
             
               
                 
+                <a class="post-title-link" href="/blog/2016/01/07/Designer pattern/" itemprop="url">
+                  Designe Pattern
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-07T19:30:40+08:00" content="2016-01-07">
+              2016-01-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/2016/01/07/Designer pattern/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/Designer pattern/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>##设计模式</p>
+<p>###基础：</p>
+<p><strong>1.抽象</strong></p>
+<p><strong>2.封装</strong></p>
+<p><strong>3.多态</strong></p>
+<p><strong>4.继承</strong></p>
+<p>####设计原则：</p>
+<p><strong>1.找出应用中可能需要变化之处，把它们独立出来，不要那些需要变化的代码混在一起</strong></p>
+<p><strong>2.针对接口编程，而不是针对实现编程</strong>    </p>
+<p><strong>3.组合优于继承</strong></p>
+<p>  <strong>1 策略模式</strong><br>    定义了算法族，分别封装起来，让他们之间可以相互替换，此模式让算法的变化独立于使用算的的客户。</p>
+<pre><code>使用策略模式实现鸭子的各种行为。这句话告诉我们，鸭子的行为被封装进入一组类中，可以被轻易
+
+地扩充与改变。如果需要，甚至在运行时也可以改变行为。
+</code></pre><p>  <strong>2 观察者(Observer)模式</strong><br>    定义了对象之间的一对多依赖，这样一来，当一个对象改变状态时，它的所有依赖着都会受</p>
+<pre><code>到通知并自动跟新。
+
+出版者+订阅者=观察者模式
+
+观察者模式提供了一种对象设计，让主题和观察者之间松耦合。
+
+改变主题或者观察者其中一方，并不会影响另一方。
+
+比如新增观察者，不需要修改主题的代码，只需在新的类里实现此观察者接口，然后注册为观
+
+察者即可。
+</code></pre><p><strong>设计原则:</strong></p>
+<p><strong>4 为了交互对象之间的松藕设计而努力。</strong></p>
+<pre><code>Java.util.Observalbe是一个类，违反针对接口编程原则，我们一般用它实现观察者模式，而是定义
+
+自己的接口去实现。其他观察者模式：Swing API:JButton---------会看到许多增加与删listener
+
+的方法。
+</code></pre><p>##设计原则：类对扩展开发，对修改关闭</p>
+<pre><code>装饰着可以在所委托被装饰者的行为之前与/或之后，加上自己的行为，以达到特定的目的。
+</code></pre><p><strong>3 装饰者模式</strong>动态地将责任附加到对象上。若要扩展功能，装饰者提供了比继承更有弹性的提单方案</p>
+<pre><code>**高内聚低耦合**---想尽一切办法解耦
+</code></pre><p><strong>4 工厂方法模式</strong>定义了一个创建对象的接口，但由子类决定要实例化的类是哪一个。工厂方法把类实例化推迟到子类。</p>
+<p>##依赖倒置原则<br>    设计原则：要依赖抽象，不要依赖具体类。</p>
+<pre><code>变量不可以持有具体类的引用
+
+不要让类派生自具体类
+
+不要覆盖基类中已实现的方法。
+</code></pre><p><strong>5 抽象工厂模式</strong>提供一个接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类</p>
+<p><strong>6 命令模式</strong>将“请求”封装成对象，以便使不同的请求、队列或者日志参数化其他对象。命令模式也支持可撤销的操作。</p>
+<pre><code>把方法调用封装起来
+</code></pre><p>命令模式的更多用途：队列请求。（日程安排，线程池，工作队列）</p>
+<p><strong>适配器模式与外观模式</strong></p>
+<pre><code>客户使用适配器的过程如下：
+
+客户通过请求目标接口调用适配器的方法对适配器发出请求
+
+适配器使用被适配者接口把请求转换成被适配者的一个或多个调用接口。
+
+客户接收到调用的结果，但并未察觉这一切是适配器在起转换作用。
+</code></pre><p><strong>7 适配器模式</strong>将一个类的接口，转换成客户期望的另一个接口。适配器让原本接口不兼容的类可以合作无间。</p>
+<p><strong>“对象”适配器和“类”适配器</strong></p>
+<pre><code>类适配器不是使用组合来适配被适配者，而是继承被适配者和目标类。
+
+装饰者：不改变接口，但假如责任
+
+适配者：将一个接口转换成另一个接口
+
+外观：让接口更简单
+</code></pre><p>外观不只是简化了接口，也将客户从组建的子系统中解耦。</p>
+<p>外观和适配器可以包装许多类，但是外观的意图是简化接口，而适配器的意图是将接口转换成同接口。</p>
+<p><strong>8 外观模式</strong>提供了一个统一的接口，用来访问子系统中的一群接口。外观定义了一个高层接口，让子系统更容易使用。</p>
+<p><strong>设计原则：只和你的密友谈话</strong></p>
+<p>不要赢得太多的朋友和影响太多的对象：</p>
+<p>就任何对象而言，在该对象的方法内，我们只应该调用属于以下范围的方法：<br>    该对象本身</p>
+<pre><code>被当做方法的参数而传递进来的对象
+
+此方法所创建或实例化的任何对象
+
+对象的任何组件
+</code></pre><p>将方法调用保持在界限内—遵守最少知识原则</p>
+<p><strong>8 模板方法模式</strong>模板方法定义了一个算法的步骤，并允许子类为一个或多个步骤提供实现。</p>
+<p><strong>模板方法模式</strong>在一个方法中定义一个算法的骨架，而将一些步骤延迟到子类中。模板方法使得子类可以在不改变算法结构的情况下，重写定义算法的某些步骤。</p>
+<p>我们也可以有“默认不做事的方法”，我们称这种方法为”hook”。子类可以视情况而定要不要覆盖他们。</p>
+<p>钩子可以让子类实现算法中可选的部分，或者在钩子对于子类的实现并不重要的时候，子类可以对此钩子置之不理。钩子还可以让子类能够有机会对模板中某些即将发生的步骤做出反应。</p>
+<p><strong>好莱坞原则 别调用我们，我们会调用你。</strong>（防止依赖腐败）当高层组件依赖低层组件，而低层组件又依赖高层组件，而高层组件又依赖边侧组件，而边侧组件又依赖低层组件时，依赖腐败就发生了。</p>
+<p>sort()——Comparable–compareTo()</p>
+<pre><code>模板方法定义了算法的步骤，把这些步骤的实现延迟到子类
+
+模板方法模式为我们提供了代码复用的重要技巧
+
+模板方法的抽象类可以定义具体方法、抽象方法和钩子。
+
+抽象方法由子类实现。
+
+为了防止子类改变模板方法中的算法，可以将模板方法声明为final
+
+好莱坞原则告诉我们，将决策权放在高层模块中，以便决定如何以及何时调用低层模块。
+
+策略模式和模板方法模式都封装算法，一个用组合，一个用继承。
+</code></pre><p>迭代器与组合模式</p>
+<p><strong>9 迭代器模式</strong>提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露其内部的表示。</p>
+<p>迭代器模式把元素之间游走的责任交给迭代器而不是聚合对象。这不仅让聚合的接口和实现变得更简洁，也可以让聚合更专注在它所应该专注的事情上面，而不必理会遍历的事情。</p>
+<p><strong>设计原则 一个类应该只有一个引起变化的原因。</strong> </p>
+<p><strong>10 组合模式</strong>允许你将对象组合成树形结构来表现“整体/部分”层次结构。组合能让客户以一致的方式处理个别对象以及对象组合。</p>
+<p>组合模式能让我们用树形方式创建对象的结构，树里面包含了组合以及个别的对象。</p>
+<p>使用组合结构，我们能把相同的操作应用在组合和个别对象上。换句话说，在大多数情况下，我们可以忽略对象组合和个别对象之间的差别。</p>
+<p><strong>11 状态模式</strong></p>
+<p><strong>状态模式</strong>允许对象在内部状态改变时改变它的行为，对象看起来好像修改了它的类。</p>
+<pre><code>状态模式和侧罗模式有相同的类图，但是他们的意图不同。
+
+策略模式通常会用行为或算法来配置Context类
+
+状态模式允许Context随着状态的改变而改变行为。
+
+状态转换可以由State类或Context类控制。
+
+使用状态模式通常会导致设计中类的数目大量增加。
+
+状态类可以被多个Context实例共享、
+</code></pre>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/2016/01/07/leetCode4/" itemprop="url">
+                  LeetCode4
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-07T19:30:40+08:00" content="2016-01-07">
+              2016-01-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/2016/01/07/leetCode4/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/leetCode4/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>##108. Convert Sorted Array to Binary Search Tree</p>
+<p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
+<p>题意给一个升序的数组，转换成二叉平衡树。</p>
+<p>注意数组是<strong>有序的</strong>。</p>
+<p>思路:从数组的mid作为根节点出发，大于mid放在右节点，小于mid的放在左节点，递归构造。</p>
+<p>学习掌握构造平衡二叉树的过程，重点在于<strong>如何处理递归</strong></p>
+<pre><code>public TreeNode sortedArrayToBST(int[] nums) {
+        if(nums==null || nums.length==0) {
+            return null;
+        }
+    return sortedArrayToBSTUtil(nums,0,nums.length);
+
+}
+
+private TreeNode sortedArrayToBSTUtil(int[] nums,int start,int end) {
+
+    if(start&gt;=end){
+        return null;
+    }
+    int mid = (start+end)/2;
+    TreeNode root = new TreeNode(nums[mid]);
+    root.left = sortedArrayToBSTUtil(nums,start,mid);
+    root.right = sortedArrayToBSTUtil(nums,mid+1,end);
+    return root;
+}
+</code></pre>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/2016/01/07/leetCode3/" itemprop="url">
+                  LeetCode3
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-07T19:30:40+08:00" content="2016-01-07">
+              2016-01-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/2016/01/07/leetCode3/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/leetCode3/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>##319. Bulb Switcher<br> There are n bulbs that are initially off. You first turn on all the bulbs. Then, you turn off every second bulb. On the third round, you toggle every third bulb (turning on if it’s off or turning off if it’s on). For the nth round, you only toggle the last bulb. Find how many bulbs are on after n rounds.</p>
+<p>Example:</p>
+<p>Given n = 3. </p>
+<p>At first, the three bulbs are [off, off, off].<br>After first round, the three bulbs are [on, on, on].<br>After second round, the three bulbs are [on, off, on].<br>After third round, the three bulbs are [on, off, off]. </p>
+<p>So you should return 1, because there is only one bulb is on.</p>
+<p>题意:</p>
+<pre><code>有n盏初始处于关闭状态的灯泡。
+
+你首先打开所有的灯泡。
+
+然后，熄灭所有序号为2的倍数的灯泡。
+
+第三轮，切换所有序号为3的倍数的灯泡（开着的就关掉，关着的就打开）。
+
+第n轮，你只切换最后一只灯泡。计算n轮之后还有几盏灯泡亮着。
+</code></pre><p>解题：<br>    前10盏灯泡的开闭过程如下所示：</p>
+<pre><code>0 0 0 0 0 0 0 0 0 0    0
+
+1 1 1 1 1 1 1 1 1 1    1
+1 0 1 0 1 0 1 0 1 0    2
+1 0 0 0 1 1 1 0 0 0    3
+1 0 0 1 1 1 1 1 0 0    4
+1 0 0 1 0 1 1 1 0 1    5
+1 0 0 1 0 0 1 1 0 1    6
+1 0 0 1 0 0 0 1 0 1    7
+1 0 0 1 0 0 0 0 0 1    8
+1 0 0 1 0 0 0 0 1 1    9
+1 0 0 1 0 0 0 0 1 0    10
+</code></pre><p>我们知道，每当灯泡会改变状态，也就是 toggle 时，是因为它出现在了某个数的整数倍上。</p>
+<p>对于第1个灯泡：1*1，会改变1次状态，即 off -》on</p>
+<p>对于第2个灯泡：1<em>2，2</em>1，会改变2次状态，即 off -》on -》off</p>
+<p>对于第3个灯泡：1<em>3，3</em>1，会改变2次状态，即 off -》on -》off</p>
+<p>对于第4个灯泡：1<em>4，2</em>2，4*1，会改变3次状态，即 off -》on -》off -》on</p>
+<p>……</p>
+<p>会发现，每当我找到一个数的整数倍，总会找到对称的一个整数倍，例如 1<em>2，就肯定会有一个 2</em>1。唯一的例外出现在平方数上，例如 4 = 2*2，只有一次整数倍。</p>
+<p>每次作为偶数次整数倍，最终的灯泡都会还原为 off；只有作为奇数次整数倍，最终的灯泡都会 on。</p>
+<p>也就是说，最终亮的灯泡数目由小于其的最大平方数确定。代码非常简单：</p>
+<p><strong>题目不难，但是需要自己发现这个规律过程比较难</strong></p>
+<pre><code>public class Solution {
+    public int bulbSwitch(int n) {
+         return (int)Math.sqrt(n); 
+    }
+}    
+</code></pre>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/2016/01/07/leetCode2/" itemprop="url">
+                  LeetCode2
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-07T19:30:40+08:00" content="2016-01-07">
+              2016-01-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/2016/01/07/leetCode2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/leetCode2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>##122. Best Time to Buy and Sell Stock II<br>Say you have an array for which the ith element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times). However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
+<p>题意：设计一个最大收益的算法，可以进行多次交易(但是必须先买入才能卖出)。</p>
+<p>int prices[]</p>
+<p>int days[]</p>
+<p>要想收益最大，低价买入，高价卖出。</p>
+<p>代码很简单：主要是思想，问题是求最大和，实际上使计算上升阶段的所有值得和</p>
+<pre><code>public int maxProfit(int[] prices) {
+    if(prices==null || prices.length&lt;2) {
+        return 0;
+    }
+    int result=0;
+    for(int i=1,len=prices.length;i&lt;len;i++) {
+        if(prices[i]&gt;prices[i-1]) {
+            result += (prices[i]-prices[i-1]);
+        }
+    }
+    return result;
+}
+</code></pre>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/2016/01/07/leetCode1/" itemprop="url">
+                  LeetCode1
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-07T19:30:40+08:00" content="2016-01-07">
+              2016-01-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/2016/01/07/leetCode1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/leetCode1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>##LeetCode303. Range Sum Query - Immutable<br>Given an integer array nums, find the sum of the elements between indices i and j (i ≤ j), inclusive.</p>
+<p>Example:</p>
+<p>Given nums = [-2, 0, 3, -5, 2, -1]</p>
+<p>sumRange(0, 2) -&gt; 1<br>sumRange(2, 5) -&gt; -1<br>sumRange(0, 5) -&gt; -3</p>
+<p>Note:</p>
+<pre><code>You may assume that the array does not change.
+There are many calls to sumRange function.
+</code></pre><p>题目的意思是给一个整形数组，计算在i和j之间的和</p>
+<pre><code class="Java">
+</code></pre>
+<p>解答：</p>
+<pre><code>public class NumArray {
+        int[] nums;
+         public NumArray(int[] nums) {
+            this.nums = nums;
+        }
+
+        public int sumRange(int i, int j) {
+
+            if(nums==null || i&lt;0 || j&gt;=nums.length) {
+                return 0;
+            }
+            int res = 0;
+            for(int index = i;index&lt;=j;index++) {
+                res += nums[index];
+            }
+            return res;
+        }
+}
+</code></pre>
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/2016/01/07/Juint/" itemprop="url">
+                  Junit
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2016-01-07T19:30:40+08:00" content="2016-01-07">
+              2016-01-07
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分类于
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/blog/categories/program/" itemprop="url" rel="index">
+                    <span itemprop="name">program</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/2016/01/07/Juint/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/07/Juint/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>1.单元测试可以降低不确定性从而降低风险</p>
+<p>2.单元测试可以把您优化设计</p>
+<p>一般来说，写代码可测试代码最好不要是同一个人。</p>
+<p>3.单元测试用例可以当文档使用。</p>
+<p><strong>单元测试</strong>—单元测试测的是独立的一个工作单元。在Java应用程序中“独立的一个工作单元”常常指的是一个方法。作为对比，集成测试和接收测试则检查多个组件如何交互。一个单元是一项任务，它不依赖与其他任何任务的完成。</p>
+<p>1.3理解单元测试框架</p>
+<p>遵循3条规则：</p>
+<p>1.每个单元测试都必须独立于其他单元测试而运行</p>
+<p>2.必须以单项测试为单位来检测和报告错误</p>
+<p>3.必须易于定义要运行哪些单元测试。</p>
+<p>Junit团队为框架设立了3个具体目标：</p>
+<pre><code>框架可以帮助我们编写有用的测试。
+
+框架必须帮助我们创建随着时间的过去依旧保持有用的测试
+
+框架必须通过复用代码降低我们编写测试的成本
+</code></pre><p><strong>TestCase + TestSuit + BaseTestRunner = TestResult</strong></p>
+<pre><code>TestCase(测试用例)--扩展了Junit的TestCase类的类。它以testXXX方法的形式包含一个或多个测试。
+
+TestSuite(测试集合)--一组测试。一个test suite是把多个相关测试归入一组的便捷方式。例如，你没有为TestCase定义一个test suite，那么Junit就会自动提供一个test suite,包含TestCase中所有的测试。
+
+
+TestRunner(测试运行器)--执行test suite的程序。Junit提供了几个test runner，你可以用他们来执行你的测试。没有TestRunner接口，只有一个所有test runner都继承的BaseTestRunner。因此，当我们编写TestRunner的时候，我们实际上指的是任何继承BaseTestRunner的test runner类。
+</code></pre><hr>
+<p>类/接口              责任</p>
+<p>Assert       当条件成立时assert方法保持沉默，否则抛出异常</p>
+<p>TestResult   包含了测试中发生的所有错误或者失败</p>
+<p>Test         可以运行Test并把结果传递给TestResult</p>
+<p>TestListener 测试中若产生事件(开始、结束、错误、失败)会通知TestListener</p>
+<p>Testcase     定义了可以用于运行多项测试的环境</p>
+<p>TestSuite     运行一组test case，他们是Test的组合</p>
+<p>BaseTestRunner test runner是用来启动测试的用户界面，BasetTestRunner是所有test runner的超类</p>
+<hr>
+<p>Keep the bar green to keep the code clean</p>
+<p>Test被设计成可以运行一个或多个test case，test runner负责启动TestSuite，需要哪些test case则由TestSuite来决定。</p>
+<p>设计模式实战：Composite模式和Command模式</p>
+<p><strong>Composite模式</strong>。把对象组合成树状结构来表示部分-整体层次关系。Composite模式可以让客户一致地对待单个对象和和对象的组合。Junit用Test接口来运行一个单独的测试，或者是多个测试的集合的集合的集合，这就是Composite模式的例子。</p>
+<p>当你给TestSuite增加一个对象时，你实际上增加的是Test,而不只是一个TestCase,因为TestSuite和TestCase都实现了Test接口。你既可以向TestSuite加入一个TestSuite也可以加入一个TestCase。如果是TestCase，那么就会运行那个单独的测试，如果是TestSuite，那么就会运行一组测试。</p>
+<p><strong>Command模式</strong>。“把请求封装成一个对象，这样就可以用不同的请求、队列或者日志请求把客户参数化，还能支持可撤销的操作”。使用Test接口来提供公共的run方法是Command模式的例子。</p>
+<p>用TestResult来收集参数</p>
+<p>所有的TestSuite都有一个对应的TestResult。</p>
+<p>TestResulte负责收集TestCase的执行结果。</p>
+<p>Junit区分失败和错误：<br>失败是可预期的<br>但错误则是测试时不可预料的</p>
+<p>当遇到错误时，好的分析步骤是：</p>
+<pre><code>1.检查环境
+
+2.检查测试
+
+3.检查代码
+</code></pre><p><strong>设计模式实战：Collecting Parameter模式</strong></p>
+<p>当你需要从几个方法中收集结果时，你应该给方法增加一个参数，并传递一个会替你收集参数的对象。eg.TestResult</p>
+<p><strong>用TestListener来观察结果</strong></p>
+<p>TestResult收集了关于测试的信息，TestRunner则负责报告信息。</p>
+<p>Junit框架提供了TestListener接口，以帮助对象访问TestResult并创建有用的报告。TestRunner实现了TestListener，很多特定的Junit扩展也实现了TestListener。</p>
+<p>设计模式实战：Observer模式</p>
+<p>在对象之间定义一个一对多的依赖关系，这样一个当对象改变了状态，那么所有依赖于它的对象都会自动收到通知并更新。TestRunner以TestListener的身份注册到TestResult，这是Observer模式的例子。</p>
+<p><strong>TestCase来工作</strong></p>
+<p>Junit的工作过程就是由TestRunner来运行一个包含一个或多个TestCase(或者其他TestSuite)的TestSuite。</p>
+<p>典型的TestCase包含两个主要部件：fixture和单元测试。</p>
+<p>用fixture来管理资源</p>
+<p>fixture–运行一个或多个测试所需的公用资源或数据集合。</p>
+<p>TestCase通过setUp和tearDown方法来自动创建和销毁fixture。TestCase会在运行每个测试之前调用setUp,并且每个测试完成之后调用tearDown。把不只一个测试方法放进统一个TestCase的一个重要理由就是可以共享fixture代码。</p>
+<p>start–setUp()–&gt;testXXX()—&gt;tearDown()–end</p>
+<p><strong>创建单元测试方法</strong></p>
+<p>Assert超类型</p>
+<p><strong>保持测试的独立性</strong></p>
+<pre><code>每项单元测试都独立于其他所有单元测试而运行
+</code></pre><p>下面是相互依赖会造成的问题：</p>
+<p>1.不具可移植性</p>
+<p>2.难以维护</p>
+<p>3.不够清晰</p>
+<p>单元测试的要点在于，一次只测试一个对象。在Java这样的面向对象环境中，对象被设计成要同其他对象交互。为了创建一个单元测试，你需要两种类型的对象，你要测试领域对象和同被测试的对象交互的测试对象。</p>
+<p>定义 <strong>领域对象</strong>–在单元测试的语境中，术语领域对象用来突出你在应用程序中使用的对象，并将之痛用来测试应用程序的对象(测试对象)相对比。任何被测试的对象都被看做是领域对象。</p>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/blog/2016/01/01/blog1/" itemprop="url">
                   我的第一篇日志
                 </a>
@@ -358,6 +1275,103 @@
 
 
     
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/blog/2015/12/31/hello-world/" itemprop="url">
+                  Hello World
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            发表于
+            <time itemprop="dateCreated" datetime="2015-12-31T23:06:17+08:00" content="2015-12-31">
+              2015-12-31
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/blog/2015/12/31/hello-world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/31/hello-world/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody">
+            
+              <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=28947001&auto=0&height=66"></iframe>
+
+            
+          </span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
 
   </section>
 
@@ -400,21 +1414,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/blog/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">分类</span>
               
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/blog/tags">
-              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
